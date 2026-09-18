@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Семь слепых зон</title>
+<meta name="description" content="Ответьте «да» или «нет» на 21 вопрос — итог посчитается сам. Эльвира Валеева, разбор жизненных ситуаций.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Самопроверка: 7 слепых зон, которые мешают жить лучше">
+<meta property="og:description" content="21 вопрос «да / нет» — итог по семи сферам жизни посчитается сам. Эльвира Валеева.">
+<meta property="og:image" content="https://emav777.github.io/slepye-zony/foto.jpg">
+<meta property="og:url" content="https://emav777.github.io/slepye-zony/">
+<link rel="icon" href="foto.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#FBF7F2; --surface:#FFFDFA; --soft:#F3E7DC; --line:#EADDD2;
+  --dark:#4E3A33; --dark-2:#6E5246;
+  --accent:#A5604A; --accent-2:#C9785E; --accent-soft:#E3A68E; --warm:#D8B98A; --warm-soft:#F2E2CB;
+  --ink:#3E302B; --ink-soft:#7A6760; --on-dark:#FBF4EE; --on-dark-soft:#E6D5CB;
+  --display:"Montserrat",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --body:"Open Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-inline:16px;padding-block:0 48px}
+.wrap{max-width:680px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0}
+.cap{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+
+/* обложка */
+.hero{background:linear-gradient(150deg,var(--dark) 0%,var(--dark-2) 100%);color:var(--on-dark);
+  border-radius:0 0 22px 22px;padding:36px 28px 30px;margin:0 -16px;}
+@media (min-width:712px){.hero{margin:0;border-radius:0 0 26px 26px}}
+.hero .cap{color:var(--warm)}
+.hero h1{font-size:clamp(28px,7vw,40px);font-weight:800;line-height:1.12;margin:10px 0 14px}
+.hero h1 em{font-style:normal;color:var(--warm)}
+.hero p{color:var(--on-dark-soft);margin:0 0 22px;max-width:52ch}
+.author{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.14);padding-top:18px}
+.author img{width:64px;height:64px;border-radius:50%;border:3px solid var(--accent-soft);object-fit:cover;flex:none}
+.author b{font-family:var(--display);font-size:16px;display:block}
+.author small{color:var(--on-dark-soft);font-size:13px}
+
+/* что это */
+.intro{margin:26px 0 8px;display:grid;gap:14px}
+.def{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.def p{margin:8px 0 0}
+.loop{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:14px;font-family:var(--display);font-weight:700;font-size:12.5px}
+.loop span{background:var(--soft);color:var(--ink);padding:6px 10px;border-radius:999px}
+.loop span:last-child{background:var(--accent);color:#fff}
+.loop i{color:var(--accent-2);font-style:normal}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.how div{background:var(--warm-soft);border-radius:14px;padding:14px;font-size:14px;line-height:1.4}
+.how b{font-family:var(--display);font-size:20px;color:var(--accent);display:block}
+@media (max-width:520px){.how{grid-template-columns:1fr}}
+
+/* прогресс */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:12px 0 10px;margin-top:10px;
+  border-bottom:1px solid var(--line)}
+.bar-row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:13.5px;color:var(--ink-soft)}
+.bar-row b{font-family:var(--display);color:var(--ink);font-variant-numeric:tabular-nums}
+.bar-row a{color:var(--accent);font-family:var(--display);font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
+.track{height:6px;background:var(--soft);border-radius:99px;margin-top:8px;overflow:hidden}
+.track div{height:100%;width:0;background:linear-gradient(90deg,var(--accent-2),var(--accent));border-radius:99px;transition:width .3s}
+
+/* сферы */
+.sphere{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:22px 22px 18px;margin-top:18px;scroll-margin-top:80px}
+.sph-hd{display:flex;align-items:center;gap:12px}
+.num{font-family:var(--display);font-weight:800;font-size:28px;color:var(--accent-2);line-height:1;min-width:22px}
+.sph-hd h2{font-size:21px;font-weight:800}
+.sph-hd .score{margin-left:auto;font-family:var(--display);font-weight:700;font-size:12px;padding:5px 10px;border-radius:999px;
+  background:var(--soft);color:var(--ink-soft);white-space:nowrap;font-variant-numeric:tabular-nums}
+.sph-hd .score.hit{background:var(--accent);color:#fff}
+.manif{margin:12px 0 4px;color:var(--ink-soft);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.chips span{border:1.5px solid var(--accent-soft);border-radius:999px;padding:3px 11px;font-family:var(--display);font-weight:700;font-size:12.5px;color:var(--ink)}
+.q{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--line)}
+.q:first-of-type{margin-top:10px}
+.q p{margin:0;flex:1;font-size:15.5px;line-height:1.45}
+.yn{display:flex;gap:6px;flex:none}
+.yn input{position:absolute;opacity:0;pointer-events:none}
+.yn label{font-family:var(--display);font-weight:700;font-size:13px;min-width:56px;text-align:center;padding:9px 0;border-radius:10px;
+  border:1.5px solid var(--line);background:var(--bg);color:var(--ink-soft);cursor:pointer;user-select:none;transition:background .15s,border-color .15s,color .15s}
+.yn label:hover{border-color:var(--accent-soft)}
+.yn input:focus-visible + label{outline:2px solid var(--accent);outline-offset:2px}
+.yn input.y:checked + label{background:var(--accent);border-color:var(--accent);color:#fff}
+.yn input.n:checked + label{background:var(--dark);border-color:var(--dark);color:#fff}
+@media (max-width:480px){.q{flex-direction:column;align-items:stretch;gap:10px}.yn label{flex:1}}
+details.prac{margin-top:12px;background:var(--warm-soft);border-radius:12px;padding:0 16px}
+details.prac summary{cursor:pointer;padding:11px 0;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);list-style:none}
+details.prac summary::-webkit-details-marker{display:none}
+details.prac summary::before{content:"+ ";}
+details.prac[open] summary::before{content:"− ";}
+details.prac p{margin:0 0 14px;font-size:15px}
+
+/* итог */
+.result{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px 22px;margin-top:30px;scroll-margin-top:80px}
+.result h2{font-size:24px;font-weight:800;margin:6px 0 4px}
+.verdict{margin:0 0 16px;color:var(--ink-soft)}
+.verdict b{color:var(--ink)}
+.rows{display:grid;gap:6px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:var(--bg);
+  text-decoration:none;color:var(--ink)}
+.row .nm{font-family:var(--display);font-weight:700;font-size:14.5px}
+.dots{display:flex;gap:5px}
+.dots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--accent-2)}
+.row .tag{font-family:var(--display);font-weight:700;font-size:11.5px;min-width:112px;text-align:right;color:var(--ink-soft)}
+.row.hit{background:var(--warm-soft)}
+.row.hit .tag{color:var(--accent)}
+@media (max-width:480px){.row .tag{min-width:0;max-width:84px;line-height:1.25}}
+.rule{margin-top:14px;font-size:14px;color:var(--ink-soft)}
+
+/* отзывы */
+.reviews{margin-top:30px}
+.reviews h2{font-size:22px;font-weight:800;margin:6px 0 14px}
+.rv{display:grid;gap:12px}
+.rv figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.rv blockquote{margin:0;font-size:15px;line-height:1.55}
+.rv blockquote::before{content:"«";font-family:var(--display);font-weight:800;color:var(--accent-2);font-size:28px;line-height:0;vertical-align:-10px;margin-right:2px}
+.rv figcaption{margin-top:10px;font-family:var(--display);font-weight:700;font-size:13px;color:var(--accent)}
+
+/* призыв */
+.cta{background:linear-gradient(150deg,var(--dark) 0%,var(--dark-2) 100%);color:var(--on-dark);border-radius:20px;padding:28px 24px;margin-top:22px}
+.cta .cap{color:var(--warm)}
+.cta h2{font-size:clamp(22px,5.5vw,28px);font-weight:800;line-height:1.2;margin:10px 0 10px}
+.cta p{color:var(--on-dark-soft);margin:0 0 20px}
+.btns{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.btns{grid-template-columns:1fr}}
+.btn{display:block;text-align:center;text-decoration:none;font-family:var(--display);font-weight:700;font-size:15px;padding:14px 12px;border-radius:12px}
+.btn small{display:block;font-family:var(--body);font-weight:400;font-size:12.5px;opacity:.85;margin-top:2px}
+.btn.main{background:linear-gradient(135deg,var(--accent-2),var(--accent));color:#fff}
+.btn.alt{border:1.5px solid rgba(255,255,255,.35);color:var(--on-dark)}
+.btn:focus-visible{outline:2px solid var(--warm);outline-offset:3px}
+.cta .mail{margin:14px 0 0;font-size:13.5px;color:var(--on-dark-soft)}
+.cta .mail a{color:var(--warm)}
+.foot{margin-top:18px;text-align:center;font-size:12.5px;color:var(--ink-soft)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="hero">
+    <div class="cap">Самопроверка</div>
+    <h1>7 <em>слепых зон</em>, которые мешают жить лучше</h1>
+    <p>Ответьте «да» или «нет» на 21 вопрос. Итог посчитается сам — в конце вы увидите, в каких сферах похоже на слепую зону.</p>
+    <div class="author">
+      <img src="foto.jpg" alt="Эльвира Валеева">
+      <div><b>Эльвира Валеева</b><small>Разбор жизненных ситуаций · гипнолог, аналитик слепых зон</small></div>
+    </div>
+  </header>
+
+  <section class="intro">
+    <div class="def">
+      <div class="cap">Что такое слепая зона</div>
+      <p>Слепые зоны — это ситуации, которые повторяются в жизни человека. Он к ним привык и не обращает внимания, и неважно, в какой сфере. Человек эти повторяющиеся моменты не видит, не замечает, а они постоянно повторяются — для того, чтобы он обратил на них внимание.</p>
+      <div class="loop"><span>Ситуация повторяется</span><i>→</i><span>человек привык</span><i>→</i><span>не замечает</span><i>→</i><span>повторяется снова</span></div>
+    </div>
+    <div class="how">
+      <div><b>1</b>На каждый вопрос нажмите «да» или «нет»</div>
+      <div><b>2</b>Внизу страницы итог посчитается сам</div>
+      <div><b>3</b>Два или три «да» в одной сфере — похоже, здесь слепая зона</div>
+    </div>
+  </section>
+
+  <div class="bar" aria-live="polite">
+    <div class="bar-row"><span>Отвечено <b id="answered">0</b> из 21</span><a href="#result">К итогу ↓</a></div>
+    <div class="track"><div id="fill"></div></div>
+  </div>
+
+  <main id="spheres"></main>
+
+  <section class="result" id="result">
+    <div class="cap">Ваш итог</div>
+    <h2 id="res-title">Пока ответов нет</h2>
+    <p class="verdict" id="verdict">Отвечайте на вопросы выше — итог обновляется сразу.</p>
+    <div class="rows" id="rows"></div>
+    <p class="rule">Два или три «да» в одной сфере — похоже, здесь слепая зона.</p>
+  </section>
+
+  <section class="reviews">
+    <div class="cap">Отзывы клиентов</div>
+    <h2>Что говорят после сеанса</h2>
+    <div class="rv">
+      <figure><blockquote>Прослушивая запись сеанса, была удивлена нюансам, которые я просто не замечала. Благодаря вам я поняла, насколько себя блокировала, в каких моментах теряла энергию.»</blockquote><figcaption>Светлана</figcaption></figure>
+      <figure><blockquote>Когда слушала, было ощущение, что это про меня: вы подтвердили многое, о чём я думала, но не признавалась себе до конца. Понимание моего предназначения прояснилось, и я знаю, куда двигаться и как.»</blockquote><figcaption>Диана</figcaption></figure>
+      <figure><blockquote>Удивило, когда мне озвучили такие моменты и нюансы моей ситуации, о которых знаю только я, как мне казалось. Мне дали не просто советы, а практические рекомендации.»</blockquote><figcaption>Дмитрий</figcaption></figure>
+      <figure><blockquote>Сеанс во многом открыл мне глаза и помог расправить плечи, освободить жизнь от застоя. Изменения уже идут.»</blockquote><figcaption>Анастасия</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cap">Что дальше</div>
+    <h2>Узнали у себя слепую зону? Запишитесь на бесплатную 30-минутную консультацию</h2>
+    <p>На ней подробнее расскажем, как проходит сеанс.</p>
+    <div class="btns">
+      <a class="btn main" href="https://t.me/elvira_valeeva777" target="_blank" rel="noopener">Написать в Телеграм<small>@elvira_valeeva777</small></a>
+      <a class="btn alt" href="https://instagram.com/elvira_audit" target="_blank" rel="noopener">Написать в Инстаграм<small>elvira_audit</small></a>
+    </div>
+    <p class="mail">Или на почту: <a href="mailto:emav777@gmail.com">emav777@gmail.com</a></p>
+  </section>
+
+  <p class="foot">Эльвира Валеева · разбор жизненных ситуаций · <a href="#" id="reset" style="color:var(--accent)">Пройти заново</a></p>
+</div>
+
+<script>
+const DATA = [
+  {name:"Деньги",
+   manif:"Финансовый потолок, который человек не может пробить при своём однозначном мышлении. Он не разрешает себе поднять этот потолок — своими убеждениями, установками. Не только своими.",
+   qs:["Вы много работаете, а доход годами стоит на одном уровне?","Ловите себя на мысли «больше мне не заработать» или «большие деньги — не для меня»?","Трудно ответить, для чего вам нужно больше денег?"],
+   prac:"Клиентка много работала, но никак не могла пробить свой финансовый потолок. Тогда она поставила цель, для чего ей нужно больше денег, — благотворительность. И у неё сразу увеличился доход в пять раз."},
+  {name:"Отношения",
+   manif:"Попадается человек с одними и теми же чертами характера. Мы всегда притягиваем тех людей, которые отражают нас.",
+   qs:["Рядом снова и снова оказываются люди с одними и теми же чертами характера?","Уходите от одного человека — и вскоре встречаете похожего?","Кажется, что дело в других, а вы тут ни при чём?"],
+   prac:"Человек поработал с собой — и моментально у него изменилось окружение."},
+  {name:"Здоровье",
+   manif:"Неправильный образ жизни, который человек не хочет менять.",
+   qs:["Знаете, что образ жизни вредит здоровью, но ничего не меняете?","Откладываете поход к врачу, пока не станет совсем плохо?","Не прислушиваетесь к телу, пока оно не заболит?"],
+   prac:"Когда человек начинает прислушиваться к своему телу и искать причины, ему обязательно попадаются врачи или информация, которая нужна для улучшения здоровья. Одному человеку дали рекомендации: сходить к врачу, попить БАДы, делать зарядку. У него начало улучшаться здоровье."},
+  {name:"Работа",
+   manif:"Человек считает, что большего он делать не может. И, скорее всего, не хочет.",
+   qs:["Считаете, что большего в работе вы сделать не можете?","Давно не интересовались ничем, кроме своего привычного дела?","Мысль сменить работу пугает сильнее, чем то, что происходит сейчас?"],
+   prac:"Всегда надо интересоваться чем-то другим, не только одним направлением. Иногда стоит даже поменять работу. Человек поменял работу — и у него в том числе наладилось в жизни."},
+  {name:"Семья",
+   manif:"Человек воспринимает семью как что-то обыденное. А семья — это постоянная работа двоих, троих — сколько человек в семье. Это не застывшая аксиома.",
+   qs:["Семья стала чем-то обыденным, само собой разумеющимся?","Давно не садились поговорить спокойно, без претензий?","Кажется, что в семье всё уже сложилось и ничего менять не надо?"],
+   prac:"Семья была на грани развода. Мы предложили спокойно сесть и поговорить без обид, претензий, обвинений друг к другу. Выяснили все точки над «и», клиент прислушался и сделал так, как ему рекомендовали. После этого отношения в семье стали как в медовом месяце."},
+  {name:"Страхи",
+   manif:"По опыту практики, страхи есть почти у каждого. Разные. Основные:",
+   chips:["потеря денег","смерть","бедность","голод"],
+   qs:["Боитесь потерять деньги или остаться без средств?","Страх бедности, голода или смерти влияет на ваши решения?","Отказываетесь от нового, потому что «а вдруг станет хуже»?"],
+   prac:"Женщина боялась уйти с нелюбимой работы: думала, что не сможет найти себя в другом месте. Терпела до того, что это начало сказываться на здоровье. Мы предложили уйти. Через полгода она написала: ушла, нашла другую, лучшую работу, жизнь начала налаживаться."},
+  {name:"Предназначение",
+   manif:"Человек не знает, для чего он здесь. Чем ему нужно заниматься, в чём можно реализоваться, какие у него таланты и способности, которые помогут проявить себя в самом лучшем виде.",
+   qs:["Трудно ответить, для чего вы здесь и чем вам по-настоящему стоит заниматься?","Не знаете, какие у вас таланты и способности?","Чувствуете, что проявляете себя не в полную силу?"],
+   prac:"Психолог, у которой не было постоянного притока клиентов — случай от случая. После сеанса ей предложили работать на большую аудиторию. Её стали приглашать на большие мероприятия — появился интерес и больше работы."}
+];
+const KEY = "slepye-zony-otvety";
+let ans = {};
+try { ans = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch(e) { ans = {}; }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(ans)); } catch(e) {} };
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+
+const root = document.getElementById("spheres");
+root.innerHTML = DATA.map((s,i) => `
+  <section class="sphere" id="s${i}">
+    <div class="sph-hd"><span class="num">${i+1}</span><h2>${s.name}</h2><span class="score" id="sc${i}">0 из 3 «да»</span></div>
+    <p class="manif">${esc(s.manif)}</p>
+    ${s.chips ? `<div class="chips">${s.chips.map(c=>`<span>${c}</span>`).join("")}</div>` : ""}
+    ${s.qs.map((q,j) => `
+      <div class="q"><p>${esc(q)}</p>
+        <div class="yn" role="radiogroup" aria-label="${esc(q)}">
+          <input type="radio" class="y" name="q${i}_${j}" id="q${i}_${j}_y" value="y"><label for="q${i}_${j}_y">Да</label>
+          <input type="radio" class="n" name="q${i}_${j}" id="q${i}_${j}_n" value="n"><label for="q${i}_${j}_n">Нет</label>
+        </div></div>`).join("")}
+    <details class="prac"><summary>Из практики</summary><p>${esc(s.prac)}</p></details>
+  </section>`).join("");
+
+function restore(){
+  document.querySelectorAll('.yn input').forEach(el => { el.checked = ans[el.name] === el.value; });
+}
+function update(){
+  let answered = 0; const zones = []; const counts = [];
+  DATA.forEach((s,i) => {
+    let yes = 0;
+    s.qs.forEach((_,j) => { const v = ans[`q${i}_${j}`]; if (v) answered++; if (v === "y") yes++; });
+    counts.push(yes); if (yes >= 2) zones.push(s.name);
+    const sc = document.getElementById("sc"+i);
+    sc.textContent = `${yes} из 3 «да»`; sc.classList.toggle("hit", yes >= 2);
+  });
+  document.getElementById("answered").textContent = answered;
+  document.getElementById("fill").style.width = (answered/21*100) + "%";
+  document.getElementById("rows").innerHTML = DATA.map((s,i) => `
+    <a class="row ${counts[i]>=2?"hit":""}" href="#s${i}">
+      <span class="nm">${i+1}. ${s.name}</span>
+      <span class="dots" aria-label="${counts[i]} из 3">${[0,1,2].map(k=>`<i class="${k<counts[i]?"on":""}"></i>`).join("")}</span>
+      <span class="tag">${counts[i]>=2 ? "похоже, слепая зона" : counts[i]+" «да»"}</span>
+    </a>`).join("");
+  const t = document.getElementById("res-title"), v = document.getElementById("verdict");
+  if (answered === 0){ t.textContent = "Пока ответов нет"; v.innerHTML = "Отвечайте на вопросы выше — итог обновляется сразу."; }
+  else if (zones.length){
+    t.textContent = zones.length === 1 ? "Похоже, у вас одна слепая зона" : `Похоже, слепых зон: ${zones.length}`;
+    v.innerHTML = `Больше всего «да» в сферах: <b>${zones.join(", ")}</b>.` + (answered < 21 ? ` Отвечено ${answered} из 21 — ответьте на остальные, чтобы итог был полным.` : "");
+  } else {
+    t.textContent = "Двух «да» пока нет ни в одной сфере";
+    v.innerHTML = answered < 21 ? `Отвечено ${answered} из 21 — ответьте на остальные, чтобы итог был полным.` : "Вы ответили на все вопросы.";
+  }
+}
+root.addEventListener("change", e => { if (e.target.matches(".yn input")) { ans[e.target.name] = e.target.value; save(); update(); } });
+document.getElementById("reset").addEventListener("click", e => { e.preventDefault(); ans = {}; save(); restore(); update(); document.getElementById("s0").scrollIntoView({behavior:"smooth"}); });
+restore(); update();
+</script>
+
+</body>
+</html>
